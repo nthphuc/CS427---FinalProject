@@ -35,11 +35,10 @@ public class PlayerController : MonoBehaviour
 
     public void Example()
     {
-        _y = 0.44f;
-        Debug.Log(new Vector3(_x, _y, _z));
-        Debug.Log(gameObject.transform.position);
+        _y = gameObject.transform.position.y;
+        agent.SetDestination(new Vector3(_x, _y, _z));
         Debug.Log(Vector3.Distance(new Vector3(_x, _y, _z), gameObject.transform.position));
-        if (Vector3.Distance(new Vector3(_x, _y, _z), gameObject.transform.position) == 0)
+        if (Vector3.Distance(new Vector3(_x, _y, _z), gameObject.transform.position) <= 1.2f)
         {
             _y = -0.44f;
             _x = UnityEngine.Random.Range(-8.0f, 88.0f);
