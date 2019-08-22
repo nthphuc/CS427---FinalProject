@@ -1,2 +1,6 @@
 Base path: '/home/viperk/software/unity3d/2019.2.1f1/Editor/Data', plugins path '/home/viperk/software/unity3d/2019.2.1f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
+Cmd: preprocess
+  insize=8999 outsize=4719 ok=1
+Cmd: preprocess
+  insize=8999 outsize=4719 ok=1
