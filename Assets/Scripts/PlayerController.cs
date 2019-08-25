@@ -26,9 +26,11 @@ public class PlayerController : MonoBehaviour
         if (Vector3.Distance(player.transform.position,gameObject.transform.position)<20)
         {
             agent.SetDestination(player.transform.position);
+            GetComponent<Animator>().SetBool("run", true);
         }
         else
         {
+            GetComponent<Animator>().SetBool("run", false);
             Example();
         }
     }
