@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     {
         _y = gameObject.transform.position.y;
         agent.SetDestination(new Vector3(_x, _y, _z));
-        Debug.Log(Vector3.Distance(new Vector3(_x, _y, _z), gameObject.transform.position));
+        // Debug.Log(Vector3.Distance(new Vector3(_x, _y, _z), gameObject.transform.position));
         if (Vector3.Distance(new Vector3(_x, _y, _z), gameObject.transform.position) <= 1.2f)
         {
             _y = -0.44f;
