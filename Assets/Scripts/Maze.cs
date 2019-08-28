@@ -11,12 +11,12 @@ public class Maze : MonoBehaviour
     private Vector3 initialPos;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         CreateWalls();
     }
 
-    void CreateWalls()
+    private void CreateWalls()
     {
         initialPos = new Vector3((-xSize / 2) + wallLength / 2, 0.0f, (-ySize / 2) + wallLength / 2);
         Vector3 myPos = initialPos;
@@ -44,7 +44,7 @@ public class Maze : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         
     }

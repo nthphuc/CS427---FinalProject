@@ -21,9 +21,10 @@ public class PlayerController : MonoBehaviour
         _z = gameObject.transform.position.z;
     }
 
-    void Update()
+    private void Update()
     {
-        if (Vector3.Distance(player.transform.position,gameObject.transform.position)<20)
+        
+        if ((Vector3.Distance(player.transform.position,gameObject.transform.position)<20) && (player.GetComponent<Hide>().getHidingStatus() == false))
         {
             agent.SetDestination(player.transform.position);
             GetComponent<Animator>().SetBool("run", true);

@@ -8,7 +8,7 @@ public class FlameAnimation : MonoBehaviour
     public GameObject FlameLight;
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         if (LightMode == 0)
         {
@@ -16,7 +16,7 @@ public class FlameAnimation : MonoBehaviour
         }
     }
 
-    IEnumerator AnimateLight ()
+    private IEnumerator AnimateLight ()
     {
         LightMode = Random.Range(1, 4);
         if (LightMode == 1)

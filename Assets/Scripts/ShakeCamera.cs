@@ -7,10 +7,10 @@ public class ShakeCamera : MonoBehaviour
     public CameraShake cameraShake;
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         float currentDis = Vector3.Distance(transform.position, Camera.main.gameObject.transform.position);
-        if (currentDis < 4f){
+        if (currentDis < 15f){
             StartCoroutine(cameraShake.Shake(.15f, .4f));
         }
     }
