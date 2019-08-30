@@ -8,6 +8,9 @@ public class Hide : MonoBehaviour
 {
     public Camera mainCamera;
     public Camera hidingCamera;
+    public Camera hidingCamera1;
+    public Camera hidingCamera2;
+    public Camera hidingCamera3;
 
     public int rayLength = 10;
 
@@ -19,6 +22,9 @@ public class Hide : MonoBehaviour
     {
         mainCamera.enabled = true;
         hidingCamera.enabled = false;
+        hidingCamera1.enabled = false;
+        hidingCamera2.enabled = false;
+        hidingCamera3.enabled = false;
     }
 
     // Update is called once per frame
@@ -26,10 +32,12 @@ public class Hide : MonoBehaviour
     {
         RaycastHit hit;
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
+	    string tagName = "";
 
         if (Physics.Raycast(transform.position, fwd, out hit, rayLength))
         {
-            if ((hit.collider.gameObject.tag == "Hide") && (isHiding == false))
+            tagName = hit.collider.gameObject.tag;	
+            if ((tagName == "Hide" || tagName == "Hide1" || tagName == "Hide2" || tagName == "Hide3") && (isHiding == false))
             {
                 Debug.Log("aaaa");
                 guiShow = true;
@@ -37,9 +45,21 @@ public class Hide : MonoBehaviour
                 {
                     //GameObject.Find("First Person Controller").GetComponent<CharacterController>().enabled = false;
                     //GameObject.Find("Graphics").GetComponent<MeshRenderer>().enabled = false;
-
                     mainCamera.enabled = false;
-                    hidingCamera.enabled = true;
+
+                    if(tagName == "Hide") {
+                        hidingCamera.enabled = true;
+                    }
+                    else if(tagName == "Hide1") {
+                        Debug.Log("UEUEUEUEUUE");
+                        hidingCamera1.enabled = true;
+                    }
+                    else if(tagName == "Hide2") {
+                        hidingCamera2.enabled = true;
+                    }
+                    else if(tagName == "Hide3") {
+                        hidingCamera3.enabled = true;
+                    }
 
                     StartCoroutine(Wait());
                 }
@@ -59,7 +79,19 @@ public class Hide : MonoBehaviour
                 //GameObject.Find("Graphics").GetComponent<MeshRenderer>().enabled = false;
 
                 mainCamera.enabled = true;
-                hidingCamera.enabled = false;
+                if(tagName == "Hide") {
+			        hidingCamera.enabled = false;
+                }
+                else if(tagName == "Hide1") {
+                    Debug.Log("UEUEUEUEUUE");
+                    hidingCamera1.enabled = false;
+                }
+                else if(tagName == "Hide2") {
+                    hidingCamera2.enabled = false;
+                }
+                else if(tagName == "Hide3") {
+                    hidingCamera3.enabled = false;
+                }
 
                 isHiding = false;
             }

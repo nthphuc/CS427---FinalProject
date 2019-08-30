@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Hide
+  - Hide1
+  - Hide2
+  - Hide3
+  - Item
+  - ScoreText
+  - LossNoti
   layers:
   - Default
   - TransparentFX
