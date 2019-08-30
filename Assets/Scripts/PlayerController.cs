@@ -49,6 +49,16 @@ public class PlayerController : MonoBehaviour
             agent.SetDestination(new Vector3(_x, _y, _z));
             // Debug.Log(new Vector3(_x, _y, _z));
         }
-
+    }
+    
+    void OnCollisionEnter(Collision collision) {
+        Debug.Log("TOUCHCHCHC");
+        string colliderTag = collision.gameObject.tag;
+        if(colliderTag == "Player") {
+            Debug.Log("YOU DIED");
+            Destroy(collision.gameObject);
+            GameObject lossNotiBoard = GameObject.FindWithTag("LossNoti");
+            lossNotiBoard.GetComponent<LossNotiControl>().notiLosedGame();
+        }
     }
 }
