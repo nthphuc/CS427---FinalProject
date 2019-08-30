@@ -39,26 +39,38 @@ public class Hide : MonoBehaviour
             tagName = hit.collider.gameObject.tag;	
             if ((tagName == "Hide" || tagName == "Hide1" || tagName == "Hide2" || tagName == "Hide3") && (isHiding == false))
             {
-                Debug.Log("aaaa");
                 guiShow = true;
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    //GameObject.Find("First Person Controller").GetComponent<CharacterController>().enabled = false;
-                    //GameObject.Find("Graphics").GetComponent<MeshRenderer>().enabled = false;
                     mainCamera.enabled = false;
 
                     if(tagName == "Hide") {
                         hidingCamera.enabled = true;
+
+                        hidingCamera1.enabled = false;
+                        hidingCamera2.enabled = false;
+                        hidingCamera3.enabled = false;
                     }
                     else if(tagName == "Hide1") {
-                        Debug.Log("UEUEUEUEUUE");
                         hidingCamera1.enabled = true;
+
+                        hidingCamera.enabled = false;
+                        hidingCamera2.enabled = false;
+                        hidingCamera3.enabled = false;
                     }
                     else if(tagName == "Hide2") {
                         hidingCamera2.enabled = true;
+
+                        hidingCamera.enabled = false;
+                        hidingCamera1.enabled = false;
+                        hidingCamera3.enabled = false;
                     }
                     else if(tagName == "Hide3") {
                         hidingCamera3.enabled = true;
+
+                        hidingCamera.enabled = false;
+                        hidingCamera1.enabled = false;
+                        hidingCamera2.enabled = false;
                     }
 
                     StartCoroutine(Wait());
@@ -70,20 +82,15 @@ public class Hide : MonoBehaviour
             guiShow = false;
         }
 
-        Debug.Log(isHiding);
         if (isHiding == true)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                //GameObject.Find("First Person Controller").GetComponent<CharacterController>().enabled = true;
-                //GameObject.Find("Graphics").GetComponent<MeshRenderer>().enabled = false;
-
                 mainCamera.enabled = true;
                 if(tagName == "Hide") {
 			        hidingCamera.enabled = false;
                 }
                 else if(tagName == "Hide1") {
-                    Debug.Log("UEUEUEUEUUE");
                     hidingCamera1.enabled = false;
                 }
                 else if(tagName == "Hide2") {

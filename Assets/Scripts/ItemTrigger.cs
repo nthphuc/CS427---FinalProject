@@ -20,7 +20,6 @@ public class ItemTrigger : MonoBehaviour
     void OnTriggerEnter(Collider collider) {
         string colliderTag = collider.gameObject.tag;
         if(colliderTag == "Player") {
-            Debug.Log("QUYEYEYEYEY");
             GameObject scoreText = GameObject.FindWithTag("ScoreText");
             scoreText.GetComponent<ScoreDisplay>().decreaseNumItem();
             Destroy(this.gameObject);
