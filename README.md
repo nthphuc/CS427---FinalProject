@@ -17,5 +17,4 @@ We borrow the idea from old game 'Pacman' but translate it into 3d horror versio
 2019.2.1f1  
 
 **Trailer**  
-
 You can see it [here](https://youtu.be/-IE_tgmP2e0)
